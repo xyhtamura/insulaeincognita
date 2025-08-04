@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+    <meta charset="UTF-8">
+    <script src="glyphData.js"></script>
+    <script src="translationModule.js"></script>
+    <script src="backgroundManager.js"></script>
+    <script src="lineGenerator.js"></script>
+    <title>pang</title>
+    <style>
+@font-face {
+  font-family: 'Noto Sans';
+  /* Update the url to your exact filename */
+  src: url('./fonts/NotoSans-VariableFont_wdth,wght.ttf') format('truetype-variations');
+  
+  /* Define the range of weights the font supports */
+  font-weight: 100 900;
+  
+  /* Define the range of widths (stretch) the font supports */
+  font-stretch: 62.5% 100%;
+}
+        @font-face {
+            font-family: 'Noto Sans Tagalog';
+            src: url('./fonts/NotoSansTagalog-Regular.ttf') format('truetype');
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Noto Sans', 'Noto Sans Tagalog';
+			
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            transition: background-color 1s ease;
+        }
+        #terminal {
+            font-size: 2.5vmin;
+            line-height: 1;
+            letter-spacing: 3px;
+            text-align: center;
+            white-space: pre;
+            padding: 20px;
+            border-radius: 10px;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 1s ease;
+max-width: 500px;  /* Set your desired maximum width */
+        white-space: nowrap; /* Prevents text from wrapping to the next line */
+        overflow: hidden;    /* Hides any content that overflows the container */
+        }
+        #terminal-content {
+            max-width: 90%;
+            max-height: 90%;
+            overflow: hidden;
+			line-height: 0.3;
+        }
+		
+
+    </style>
+</head>
+<body>
+<div id="terminal">
+        <div id="terminal-content">
+            <div id="terrain-layer"></div>
+            <div id="clouds-layer"></div>
+        </div>
+    </div>
+
+<script>
+    // --- Constants and DOM Elements ---
+    const COLS = 30;
+    const MAX_LINES = 30;
+    const GENERATION_INTERVAL = 1000;
+    const container = document.getElementById('terminal-content');
+
+    // --- Module Initialization ---
+    const lineGenerator = new LineGenerator(COLS);
+    const background = new BackgroundManager();
+    const translator = new TranslationEngine();
+
+    // --- Helper function to build HTML from cell data ---
+    function buildHTMLFromData(data) {
+        return data.map(cell => 
+            `<span class="${cell.className}">${cell.char}</span>`
+        ).join('');
+    }
+
+    // --- Main Loop ---
+    setInterval(() => {
+        // --- 1. MUTATE EXISTING LINES ---
+        for (const lineP of container.children) {
+            // First, parse the existing HTML back into a data array
+            let currentLineData = Array.from(lineP.children).map(span => {
+                return { char: span.textContent, className: span.className };
+            });
+
+            // Keep a copy of the original length to check for changes
+            const originalLength = currentLineData.length;
+
+            // Pass the data to the translator
+            const mutatedLineData = translator.translateLineData(currentLineData);
+
+            // If a mutation happened (the line's content changed), re-render the <p>
+            if (mutatedLineData.length !== originalLength) {
+                 console.log(`MUTATION OCCURRED`);
+                 lineP.innerHTML = buildHTMLFromData(mutatedLineData);
+            }
+        }
+
+        // --- 2. GENERATE ONE NEW LINE ---
+        const newLineData = lineGenerator.generateNewLine();
+        const newP = document.createElement('p');
+        newP.innerHTML = buildHTMLFromData(newLineData);
+        container.prepend(newP);
+
+        // --- 3. MAINTAIN SCREEN SIZE ---
+        if (container.children.length > MAX_LINES) {
+            container.lastElementChild.remove();
+        }
+    }, GENERATION_INTERVAL);
+
+
+    // --- Smooth Animation Loop ---
+    function animationLoop() {
+        background.update();
+        requestAnimationFrame(animationLoop);
+    }
+
+    // --- Start Everything ---
+    animationLoop();
+</script>
+</body>
+</html>
