@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>pang</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            transition: background-color 1s ease;
+        }
+        #terminal {
+            font-size: 3vmin;
+            line-height: 1;
+            letter-spacing: 3px;
+            text-align: center;
+            white-space: pre;
+            padding: 20px;
+            border-radius: 10px;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 1s ease;
+        }
+        #terminal-content {
+            max-width: 90%;
+            max-height: 90%;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div id="terminal">
+        <div id="terminal-content"></div>
+    </div>
+
+    <script>
+        // Fixed 30x30 grid
+        const COLS = 30;
+        const ROWS = 30;
+        const SCROLL_SPEED = 0.1;
+        
+        // Base colors for terrain types (will be hue-shifted)
+        const BASE_COLORS = {
+            water: { h: 200, s: 60, l: 80, speed: 1.2 },
+            sand: { h: 45, s: 30, l: 72, speed: 1.0 },
+            grass: { h: 120, s: 30, l: 67, speed: 0.8 },
+            forest: { h: 120, s: 30, l: 50, speed: 0.6 },
+            mountain: { h: 10, s: 20, l: 80, speed: 0.4 }
+        };
+
+        const TERRAIN_TYPES = [
+            { name: 'water', chars: ['~'], baseColor: BASE_COLORS.water, weight: 0.4, height: -1 },
+            { name: 'sand', chars: ['.'], baseColor: BASE_COLORS.sand, weight: 0.1, height: 0 },
+            { name: 'grass', chars: ['*'], baseColor: BASE_COLORS.grass, weight: 0.3, height: 1 },
+            { name: 'forest', chars: ['▓'], baseColor: BASE_COLORS.forest, weight: 0.15, height: 2 },
+            { name: 'mountain', chars: ['▤'], baseColor: BASE_COLORS.mountain, weight: 0.05, height: 3 }
+        ];
+
+        class ScrollingTerrain {
+            constructor() {
+                this.grid = Array(ROWS).fill().map(() => 
+                    Array(COLS).fill().map(() => this.randomTerrain())
+                );
+                this.scrollOffset = 0;
+                this.clusterStrength = 0.7;
+                this.globalHueSpeed = 0.01; // Global speed multiplier
+                this.time = 0;
+            }
+            
+            randomTerrain() {
+                const totalWeight = TERRAIN_TYPES.reduce((sum, t) => sum + t.weight, 0);
+                let random = Math.random() * totalWeight;
+                let weightSum = 0;
+                
+                for (const terrain of TERRAIN_TYPES) {
+                    weightSum += terrain.weight;
+                    if (random <= weightSum) return terrain;
+                }
+                return TERRAIN_TYPES[0];
+            }
+            
+            update() {
+                this.time += 0.01;
+                
+                this.scrollOffset += SCROLL_SPEED;
+                
+                // When we've scrolled one full row
+                if (this.scrollOffset >= 1) {
+                    this.scrollOffset = 0;
+                    this.grid.shift(); // Remove top row
+                    this.grid.push(this.generateNextRow()); // Add new bottom row
+                }
+            }
+            
+            generateNextRow() {
+                const newRow = [];
+                const lastRow = this.grid[this.grid.length-1];
+                
+                for (let x = 0; x < COLS; x++) {
+                    // Get neighbors for clustering
+                    const left = newRow[x-1] || lastRow[x];
+                    const above = lastRow[x];
+                    
+                    // Combine influences
+                    if (Math.random() < this.clusterStrength) {
+                        newRow.push(Math.random() < 0.6 ? left : above);
+                    } else {
+                        newRow.push(this.randomTerrain());
+                    }
+                }
+                
+                return newRow;
+            }
+            
+            getShiftedColor(baseColor) {
+                // Calculate individual hue shift based on terrain type's speed
+                const hueShift = (this.time * this.globalHueSpeed * baseColor.speed * 360) % 360;
+                const hue = (baseColor.h + hueShift + 360) % 360;
+                return `hsl(${hue}, ${baseColor.s}%, ${baseColor.l}%)`;
+            }
+            
+            updateBackgrounds() {
+                // Calculate background colors with hue shift (using average speed)
+                const avgSpeed = (BASE_COLORS.water.speed + BASE_COLORS.sand.speed) / 2;
+                const bgHueShift = (this.time * this.globalHueSpeed * avgSpeed * 360) % 360;
+                const bgHue = (200 + bgHueShift) % 360;
+                const terminalBgHue = (190 + bgHueShift * 0.7) % 360;
+                
+                document.body.style.backgroundColor = `hsl(${bgHue}, 30%, 85%)`;
+                document.getElementById('terminal').style.backgroundImage = 
+                    `linear-gradient(hsl(${terminalBgHue}, 60%, 92%), hsl(${terminalBgHue}, 60%, 90%))`;
+            }
+            
+            render() {
+                let output = '';
+                
+                for (let y = 0; y < ROWS; y++) {
+                    // Calculate vertical position with scroll offset
+                    const renderY = y - this.scrollOffset;
+                    
+                    // Only render visible rows
+                    if (renderY >= -1 && renderY < ROWS) {
+                        for (let x = 0; x < COLS; x++) {
+                            const terrain = this.grid[y][x];
+                            const color = this.getShiftedColor(terrain.baseColor);
+                            output += `<span style="color:${color}">${terrain.chars[0]}</span>`;
+                        }
+                        output += '\n';
+                    }
+                }
+                
+                document.getElementById('terminal-content').innerHTML = output;
+                this.updateBackgrounds();
+            }
+        }
+
+        // Initialize and run
+        const terrain = new ScrollingTerrain();
+        
+        function gameLoop() {
+            terrain.update();
+            terrain.render();
+            requestAnimationFrame(gameLoop);
+        }
+        
+        // Start the animation
+        gameLoop();
+
+        // Handle window resize
+        window.addEventListener('resize', function() {
+            const content = document.getElementById('terminal-content');
+            const fontSize = Math.min(
+                window.innerWidth / (COLS * 1.2), 
+                window.innerHeight / (ROWS * 1.2)
+            );
+            content.style.fontSize = `${fontSize}px`;
+        });
+
+        // Add controls for global speed
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowUp') {
+                terrain.globalHueSpeed = Math.min(terrain.globalHueSpeed + 0.1, 2.0);
+            } else if (e.key === 'ArrowDown') {
+                terrain.globalHueSpeed = Math.max(terrain.globalHueSpeed - 0.1, 0.1);
+            }
+        });
+    </script>
+</body>
+</html>
