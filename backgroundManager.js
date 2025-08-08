@@ -190,6 +190,7 @@ const STYLE_CONFIG = {
     }
 };
 
+
 class BackgroundManager {
     constructor() {
         this.styles = STYLE_CONFIG;
@@ -267,6 +268,7 @@ class BackgroundManager {
         this.styleElement.innerHTML = newCssRules;
     }
     animateProperty(property) {
+
         if (!property || !property.animate) return;
         for (const prop in property.animate) {
             const anim = property.animate[prop];
