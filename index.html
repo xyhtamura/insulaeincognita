@@ -4,6 +4,9 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tagalog&display=swap" rel="stylesheet">
+
 
 
     <meta charset="UTF-8">
@@ -13,28 +16,33 @@
     <script src="lineGenerator.js"></script>
     <title>Insulae Incognita</title>
     <style>
-		@font-face {
-		  font-family: 'Noto Sans';
-		  /* Update the url to your exact filename */
-		  src: url('./fonts/NotoSans-VariableFont_wdth,wght.ttf') format('truetype-variations');
-		  
-		  /* Define the range of weights the font supports */
-		  font-weight: 100 900;
-		  
-		  /* Define the range of widths (stretch) the font supports */
-		  font-stretch: 62.5% 100%;
-		}
-		
-        @font-face {
-            font-family: 'Noto Sans Tagalog';
-            src: url('./fonts/NotoSansTagalog-Regular.ttf') format('truetype');
-        }
+@font-face {
+    font-family: 'Noto Sans';
+    src:
+        /* Local file first */
+        url('./fonts/NotoSans-VariableFont_wdth,wght.ttf') format('truetype-variations'),
+        /* Google Fonts fallback */
+        url('https://fonts.gstatic.com/s/notosans/v40/o-0IIpQlx3QUlC5A4PNr5TR1l1ldS4f3.woff2') format('woff2');
+    font-weight: 100 900;
+    font-stretch: 62.5% 100%;
+}
+
+@font-face {
+    font-family: 'Noto Sans Tagalog';
+    src:
+        /* Local file first */
+        url('./fonts/NotoSansTagalog-Regular.ttf') format('truetype'),
+        /* Google Fonts fallback */
+        url('https://fonts.gstatic.com/s/notosanstagalog/v20/Y4GaaLOX1SKvB-x5zEpGOIv8uPr5YxUC.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
 		
         body {
             margin: 0;
             padding: 0;
             overflow: hidden;
-            font-family: 'Noto Sans', 'Noto Sans Tagalog';
+            font-family: 'Noto Sans', 'Noto Sans Tagalog', sans-serif;
 			
             display: flex;
             justify-content: center;
