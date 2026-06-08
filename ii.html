@@ -1,65 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Insulae Incognita</title>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Playfair+Display&family=Raleway&family=VT323&family=Averia+Sans+Libre&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Insulae Incognita — Title Cover</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600&family=IM+Fell+English:ital@0;1&family=Cutive+Mono&family=Great+Vibes&family=Major+Mono+Display&family=Nunito:wght@700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --water: hsl(199, 38%, 34%);
+      --sand:  hsl(45,  40%, 52%);
+      --grass: hsl(110, 32%, 32%);
+      --forest:hsl(133, 42%, 22%);
+      --mount: hsl(12,  28%, 36%);
+      --sky-1: hsl(195, 62%, 92%);
+      --sky-2: hsl(200, 52%, 86%);
+      --coral: hsl(12, 70%, 60%);
+      --pink: hsl(340, 65%, 70%);
+    }
+    html, body { height: 100%; margin: 0; }
     body {
-      background-color: #fff;
-      color: #000;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      margin: 0;
+      background: #fff;
     }
-
+    .wrap { text-align: center; }
     .title {
-      font-size: 4rem;
-      line-height: 1;
+      font-size: clamp(48px, 9vw, 120px);
+      display: inline-flex;
+      gap: 0.02em;
+      line-height: 0.95;
     }
+    .title span { display: inline-block; }
+    .f1 { font-family: 'Space Grotesk', sans-serif; font-weight: 600; letter-spacing: -0.01em; }
+    .f2 { font-family: 'IM Fell English', serif; font-style: normal; }
+    .f3 { font-family: 'Cutive Mono', monospace; }
+    .f4 { font-family: 'Great Vibes', cursive; font-size: 1.08em; letter-spacing: 0.02em; }
+    .f5 { font-family: 'Major Mono Display', monospace; letter-spacing: 0.06em; }
 
-    .title span {
-      display: inline-block;
-      margin: 0 0.01em; /* tighter spacing */
-    }
+    .water  { color: var(--water); }
+    .sand   { color: var(--sand); }
+    .grass  { color: var(--grass); }
+    .forest { color: var(--forest); }
+    .mount  { color: var(--mount); }
 
-    .f1 { font-family: 'Playfair Display', serif; }
-    .f2 { font-family: 'IBM Plex Mono', monospace; }
-    .f3 { font-family: 'Raleway', sans-serif; }
-    .f4 { font-family: 'VT323', monospace; }
+    .title span:nth-child(1)  { transform: translateY(-6px); }
+    .title span:nth-child(2)  { transform: translateY(-10px); }
+    .title span:nth-child(3)  { transform: translateY(-14px); }
+    .title span:nth-child(4)  { transform: translateY(-10px); }
+    .title span:nth-child(5)  { transform: translateY(-6px); }
+    .title span:nth-child(6)  { transform: translateY(-2px); }
+    .title span:nth-child(7)  { transform: translateY(0px); }
+    .title span:nth-child(8)  { transform: translateY(2px); }
+    .title span:nth-child(9)  { transform: translateY(4px); }
+    .title span:nth-child(10) { transform: translateY(6px); }
+    .title span:nth-child(11) { transform: translateY(8px); }
+    .title span:nth-child(12) { transform: translateY(6px); }
+    .title span:nth-child(13) { transform: translateY(4px); }
+    .title span:nth-child(14) { transform: translateY(2px); }
+    .title span:nth-child(15) { transform: translateY(0px); }
+    .title span:nth-child(16) { transform: translateY(-2px); }
+    .title span:nth-child(17) { transform: translateY(-4px); }
 
-    .subtitle {
-      font-family: 'Averia Sans Libre', sans-serif;
-      font-size: 3rem;
+    .byline {
       margin-top: 1rem;
+      font-family: 'Nunito', sans-serif;
+      font-size: clamp(20px, 3vw, 32px);
       letter-spacing: 0.05em;
+      background: linear-gradient(90deg, var(--pink), var(--coral));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
   </style>
 </head>
 <body>
-  <div class="title">
-    <span class="f1">I</span>
-    <span class="f2">n</span>
-    <span class="f3">s</span>
-    <span class="f4">u</span>
-    <span class="f1">l</span>
-    <span class="f2">a</span>
-    <span class="f3">e</span>
-    <span class="f4">&nbsp;</span>
-    <span class="f1">I</span>
-    <span class="f2">n</span>
-    <span class="f3">c</span>
-    <span class="f4">o</span>
-    <span class="f1">g</span>
-    <span class="f2">n</span>
-    <span class="f3">i</span>
-    <span class="f4">t</span>
-    <span class="f1">a</span>
+  <div class="wrap">
+    <h1 class="title">
+      <span class="f1 water">I</span>
+      <span class="f2 forest">n</span>
+      <span class="f3 grass">s</span>
+      <span class="f4 sand">u</span>
+      <span class="f5 mount">l</span>
+      <span class="f1 water">a</span>
+      <span class="f2 forest">e</span>
+      <span>&nbsp;</span>
+      <span class="f1 grass">I</span>
+      <span class="f5 sand">n</span>
+      <span class="f3 water">c</span>
+      <span class="f4 forest">o</span>
+      <span class="f2 mount">g</span>
+      <span class="f3 grass">n</span>
+      <span class="f5 sand">i</span>
+      <span class="f1 water">t</span>
+      <span class="f2 forest">a</span>
+    </h1>
+    <div class="byline">xyh tamura</div>
   </div>
-
-  <div class="subtitle">xyh tamura</div>
 </body>
 </html>

@@ -1,0 +1,126 @@
+/* Import the fonts used in the project */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Playfair+Display&family=Raleway&family=VT323&family=Averia+Sans+Libre&display=swap');
+
+/*
+  CSS Variables based on the initial HSL values in `backgroundManager.js`.
+  This creates a direct visual and thematic link to the main piece.
+*/
+:root {
+  /* from global.body */
+  --bg-hue: 200;
+  --bg-saturation: 5%;
+  --bg-lightness: 85%;
+
+  /* from terrain styles (textColor or bgColor) */
+  --water-color: hsl(199, 38%, 74%);
+  --sand-color: hsl(45, 30%, 61%);
+  --grass-color: hsl(25, 19%, 21%);
+  --forest-color: hsl(137, 97%, 22%);
+  --mountain-color: hsl(94, 32%, 11%);
+}
+
+/* Define the subtle background animation */
+@keyframes rotate-hue {
+  from {
+    --bg-hue: 200;
+  }
+  to {
+    --bg-hue: 560; /* 200 + 360 for a full rotation */
+  }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+
+body.title-page {
+  /* Use CSS variables for the background color */
+  background-color: hsl(var(--bg-hue), var(--bg-saturation), var(--bg-lightness));
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  transition: background-color 2s ease;
+
+  /* Apply the animation */
+  animation: rotate-hue 180s linear infinite;
+}
+
+.title-container {
+  text-align: center;
+  border: 1px solid hsla(var(--bg-hue), 10%, 50%, 0.3);
+  padding: 2rem 3rem;
+  background-color: hsla(var(--bg-hue), 20%, 98%, 0.4);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+}
+
+.title {
+  font-size: 4rem;
+  line-height: 1;
+  margin: 0;
+  text-shadow: 1px 1px 15px hsla(var(--bg-hue), 10%, 0%, 0.1);
+}
+
+.title span {
+  display: inline-block;
+  margin: 0 0.01em;
+  transition: transform 0.3s ease, color 0.5s ease;
+}
+
+.title span:hover {
+    transform: scale(1.1);
+}
+
+/* Assigning colors to terrain classes */
+.water-char { color: var(--water-color); }
+.sand-char { color: var(--sand-color); }
+.grass-char { color: var(--grass-color); }
+.forest-char { color: var(--forest-color); }
+.mountain-char { color: var(--mountain-color); }
+
+
+/* Original Font families */
+.f1 { font-family: 'Playfair Display', serif; }
+.f2 { font-family: 'IBM Plex Mono', monospace; }
+.f3 { font-family: 'Raleway', sans-serif; }
+.f4 { font-family: 'VT323', monospace; }
+
+
+.subtitle {
+  font-family: 'Averia Sans Libre', sans-serif;
+  font-size: 2rem;
+  margin-top: 1rem;
+  color: hsl(var(--bg-hue), 10%, 40%);
+  letter-spacing: 0.05em;
+  font-weight: normal;
+}
+
+.enter-container {
+  margin-top: 3rem;
+}
+
+.enter-link {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: hsl(var(--bg-hue), 15%, 50%);
+  border: 1px solid hsl(var(--bg-hue), 15%, 70%);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  animation: blink 3s ease-in-out infinite;
+}
+
+.enter-link:hover {
+  background-color: hsl(var(--bg-hue), 15%, 80%);
+  color: #000;
+  border-color: hsl(var(--bg-hue), 15%, 50%);
+  animation-play-state: paused; /* Pause blinking on hover */
+}
