@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Art manual and research-creation exegesis for xyh tamura's Insulae Incognita, a generative visual poem composed from multiple writing systems.">
+  <meta name="author" content="xyh tamura">
+  <meta name="citation_title" content="Insulae Incognita: Art Manual and Research-Creation Exegesis">
+  <meta name="citation_author" content="tamura, xyh">
+  <meta name="citation_publication_date" content="2026">
+  <meta property="og:title" content="Insulae Incognita — art manual and exegesis">
+  <meta property="og:description" content="The concepts, visual poetics, code, installation, and references behind Insulae Incognita.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://xyhtamura.github.io/insulaeincognita/about/">
+  <title>Art Manual / Exegesis — Insulae Incognita</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="reading-progress" aria-hidden="true"><span id="reading-progress-bar"></span></div>
+
+  <header class="site-header">
+    <a class="wordmark" href="../" aria-label="Return to Insulae Incognita">
+      <span class="water">I</span>n<span class="forest">s</span>u<span class="sand">l</span>ae
+      I<span class="water">n</span>co<span class="mountain">g</span>n<span class="sand">i</span>ta
+    </a>
+    <nav aria-label="Project navigation">
+      <a href="../">View artwork</a>
+      <a href="#installation">Installation</a>
+      <a href="#bibliography">Bibliography</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-copy">
+        <p class="kicker">Art manual · research-creation exegesis · 2026</p>
+        <h1 id="page-title"><cite>Insulae Incognita</cite></h1>
+        <p class="subtitle">xyh tamura</p>
+        <p class="deck">A generative digital visual poem that composes an archipelago from scripts historically and culturally linked to the precolonial networks of the area now called Manila.</p>
+        <div class="hero-actions">
+          <a href="../">View the generative work <span aria-hidden="true">↗</span></a>
+          <a href="#about">Read the manual <span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+
+      <figure class="hero-image">
+        <img src="img/insulae-screen.png" alt="A generated Insulae Incognita landscape made from colored characters and blocks of multiple scripts." width="339" height="563">
+        <figcaption>A generated state of <cite>Insulae Incognita</cite>.</figcaption>
+      </figure>
+    </section>
+
+    <div class="paper-grid">
+      <aside class="contents" aria-label="Contents">
+        <p class="aside-label">Contents</p>
+        <ol>
+          <li><a href="#about">About the artwork</a></li>
+          <li><a href="#visual-poetics">Visual poetics</a></li>
+          <li><a href="#terra-nullius">The digital terra nullius</a></li>
+          <li><a href="#algorithm">The terrain algorithm</a></li>
+          <li><a href="#performance">Code as performance</a></li>
+          <li><a href="#translation">Translation and hybridization</a></li>
+          <li><a href="#telephony">Telephony and computation</a></li>
+          <li><a href="#limits">Limits of the digital</a></li>
+          <li><a href="#installation">Installation and operation</a></li>
+          <li><a href="#artist">About the artist</a></li>
+          <li><a href="#notes">Notes</a></li>
+          <li><a href="#bibliography">Bibliography</a></li>
+        </ol>
+      </aside>
+
+      <article class="exegesis">
+        <section id="about" class="abstract">
+          <p class="section-number">01</p>
+          <h2>About the Artwork</h2>
+          <p><cite>Insulae Incognita</cite> is a generative digital visual poem that composes an archipelago from scripts historically and culturally linked to the precolonial networks of the area now called Manila: Baybayin (Tagalog), Hanzi (China), Jawi (Brunei and Malay), Kana (Japan), and Devanagari (India), alongside modern Unicode forms. Scholarship on the precolonial and early colonial Philippines describes coastal polities as participants in regional maritime networks.<sup class="note-ref"><a id="ref-1" href="#note-1" aria-label="Note 1">1</a></sup> The relationship between these scripts in the work is historical, geographic, and speculative. The work does not claim that every script shown was used together in Manila.</p>
+
+          <p>Characters are chosen for their visual affinity to waves, foliage, or mountains, then algorithmically arranged into clusters of “forest,” “land,” “shore,” and “water” whose distribution evokes island geographies. The color palette shifts through days, seasons, and weather. Occasional translations appear, such as the Hanzi 木 (“tree”) decomposing into <i>puno</i>, ᜉᜓᜈᜓ in Baybayin.</p>
+
+          <p>The installation version was exhibited with 98B in the First United Building in Escolta for the show <cite>proposal for (an)other history</cite>. The online version continues beyond the installation.</p>
+
+          <p>The title reworks the colonial concept of <i>terra nullius</i> (land without people) into <i>insulae incognita</i>. <i>Terra</i> becomes <i>insulae</i>, and <i>nullius</i> becomes <i>incognita</i>. I think of these as islands that cannot be completely known or mapped. Language is the land and sea: a living, shifting terrain of interaction.</p>
+
+          <p>By bringing scripts from neighboring cultures into contemporary code, the work performs an act of counter-language, counter-mapping, and counter-history. It attempts to resurface Southeast and East Asia's old interconnections and syncretic histories. Baybayin itself belongs to a wider group of Brahmi-derived Southeast Asian scripts, though the historical route by which these forms reached the Philippines remains uncertain.<sup class="note-ref"><a id="ref-2" href="#note-2" aria-label="Note 2">2</a></sup></p>
+
+          <dl class="metadata">
+            <div><dt>Artist</dt><dd>xyh tamura</dd></div>
+            <div><dt>Medium</dt><dd>HTML, CSS, JavaScript, Unicode text; monitor and single-board computer for the installation version</dd></div>
+            <div><dt>Exhibition</dt><dd><cite>proposal for (an)other history</cite>, 98B, First United Building, Escolta</dd></div>
+            <div><dt>Citation system</dt><dd>Chicago Notes–Bibliography</dd></div>
+          </dl>
+        </section>
+
+        <section id="visual-poetics">
+          <p class="section-number">02</p>
+          <h2>Visual Poetics</h2>
+          <p>In conceiving <cite>Insulae Incognita</cite>, I was thinking about two different histories: concrete poetry during the dawn of the typewriter, and ASCII art in the dawn of computation.</p>
+
+          <p>In the tradition of concrete poetry, one well-known figure from Manila is José Garcia Villa, who, like e.e. cummings, experimented with the possibilities of type and punctuation in poetry. cummings's approach often leaned toward sparseness and used a great deal of white space. Garcia Villa tended toward saturation, filling the field with punctuation in the comma-filled structure of his poems and in his pure punctuation poems. In Villa's work, punctuation can be a primary visual element while also managing the rhythm or grammar of a poem.<sup class="note-ref"><a id="ref-3" href="#note-3" aria-label="Note 3">3</a></sup></p>
+
+          <figure class="manual-figure figure-narrow">
+            <img src="img/villa-centipede-sonnet.png" alt="José Garcia Villa's Centipede Sonnet, formed largely from repeated punctuation marks." width="500" height="469" loading="lazy">
+            <figcaption>José Garcia Villa, “Centipede Sonnet” (1949). Image reproduced from the expanded artist manual.</figcaption>
+          </figure>
+
+          <p>From here, it was easy for me to imagine one of Garcia Villa's poems as similar to the ASCII and text characters used in early computer games. Before graphics became widely available, games relied on text to produce visual effects and create worlds and terrain. A character could be read both as text and as an object in a world.</p>
+
+          <div class="figure-pair">
+            <figure class="manual-figure">
+              <img src="img/rogue.png" alt="A room and corridor map in Rogue rendered with colored ASCII characters." width="1280" height="720" loading="lazy">
+              <figcaption><cite>Rogue</cite> (1980).</figcaption>
+            </figure>
+            <figure class="manual-figure">
+              <img src="img/dwarf-fortress.png" alt="A Dwarf Fortress landscape rendered as a dense field of colored text characters." width="1022" height="579" loading="lazy">
+              <figcaption><cite>Dwarf Fortress</cite> (2006).</figcaption>
+            </figure>
+          </div>
+
+          <p><cite>Insulae Incognita</cite> pulls Villa's punctuation-block formations into digital space and reframes them through this lineage of ASCII and text art. Its medium is the web, through a browser with HTML and CSS, rather than a console display. The browser provides visual manipulation through CSS and, most importantly for this work, the ability to incorporate scripts from different cultures in one space through Unicode and font collections such as Noto Sans and Noto Sans Tagalog.<sup class="note-ref"><a id="ref-4" href="#note-4" aria-label="Note 4">4</a></sup></p>
+
+          <p>This ability to present cultural hybridity would not have been as easy in previous decades. The modern capability is what allows the work's central concept to function. The work is a digital landscape built from the debris and continuities of many textual worldings. It visualizes one possible interconnected, preglobalized, precolonial world.</p>
+        </section>
+
+        <section id="terra-nullius">
+          <p class="section-number">03</p>
+          <h2>The Digital <i>Terra Nullius</i></h2>
+          <p>The colonial concept of <i>terra nullius</i>, or land belonging to no one, is a mythology that allows colonial forces to justify taking and settling land. The land is treated as available because nobody is recognized as living there, or because its inhabitants are not recognized as a civilization with land rights. In Australia, the doctrine ignored the law, relation, and sovereignty of Indigenous people already living on Country.<sup class="note-ref"><a id="ref-5" href="#note-5" aria-label="Note 5">5</a></sup></p>
+
+          <p>The title <cite>Insulae Incognita</cite> speaks directly to this concept. It changes <i>terra</i> (earth) into <i>insulae</i> (islands) and <i>nullius</i> (nothing or no one's) into <i>incognita</i> (unknown). The resulting islands cannot be completely known.</p>
+
+          <p>The idea of <i>terra nullius</i> remains present in digital worlds. In sandbox and 4X games—explore, expand, exploit, exterminate—the player often arrives in a procedurally generated world presented as open for discovery, mining, building, and settlement. Even when these worlds contain non-player lifeforms, they are often framed as resources, obstacles, or curiosities. The gameplay loop can reproduce the colonial mythology of a pioneer taming an empty frontier. Postcolonial game scholarship has examined how the spatial systems, political systems, and histories of videogames can carry ideas of empire and colonialism.<sup class="note-ref"><a id="ref-6" href="#note-6" aria-label="Note 6">6</a></sup></p>
+
+          <div class="figure-pair">
+            <figure class="manual-figure">
+              <img src="img/civilization-ii.png" alt="A Civilization II game map with cities, terrain, roads, and units." width="800" height="450" loading="lazy">
+              <figcaption><cite>Civilization II</cite> (1996).</figcaption>
+            </figure>
+            <figure class="manual-figure">
+              <img src="img/minecraft.jpg" alt="A first-person Minecraft landscape with grass, flowers, water, a cave, and exposed lava." width="1600" height="1066" loading="lazy">
+              <figcaption><cite>Minecraft</cite> (2009).</figcaption>
+            </figure>
+          </div>
+
+          <p><cite>Insulae Incognita</cite> uses the visual language and algorithmic processes of procedural terrain generation from a different position. The land is language itself. It displays human and non-human presence, trade, and exchange before any supposed discovery. Together, the scripts form a geography that is already full and already in conversation with itself. There is no player avatar, inventory, mining system, or territorial objective. The audience observes the terrain as it continues to form.</p>
+        </section>
+
+        <section id="algorithm">
+          <p class="section-number">04</p>
+          <h2>The Terrain Algorithm, Code as Critique</h2>
+          <p>A central goal of <cite>Insulae Incognita</cite> is to feel like a live, continuously scrolling transmission of a world being formed in real time. Each time the installation is activated, it generates a new archipelago.</p>
+
+          <p>This required a departure from common procedural-generation methods used in games such as <cite>Minecraft</cite> or <cite>Dwarf Fortress</cite>. These games often use methods such as Perlin noise to generate a field with relatively smooth heightmaps, followed by other layers for biomes. Perlin noise calculates gradients on a lattice and interpolates them to create coherent variation across space.<sup class="note-ref"><a id="ref-7" href="#note-7" aria-label="Note 7">7</a></sup> The result can be a complete world that the player then explores.</p>
+
+          <figure class="manual-figure figure-wide">
+            <img src="img/perlin-noise-landscape.jpg" alt="A virtual mountainous landscape generated using Perlin noise." width="1280" height="960" loading="lazy">
+            <figcaption>A virtual landscape generated using Perlin noise. Image reproduced from the expanded artist manual.</figcaption>
+          </figure>
+
+          <p>This artwork required an algorithm that could continuously generate terrain line by line. The system computes each new line from the line immediately before it. This creates the appearance of a scrolling ticker tape that is being written live rather than played back from a pre-generated source.</p>
+
+          <p>The logic for generating each new character, or cell, creates clustering so that continuous areas of land and water can form. The terrain identity of a new cell is determined by a weighted probability influenced by three sources:</p>
+
+          <ol class="plain-steps">
+            <li>the cell directly above it in the previously generated line;</li>
+            <li>the cell immediately to its left in the line currently being generated; and</li>
+            <li>a randomly selected terrain type.</li>
+          </ol>
+
+          <p>In the current implementation, these sources influence the new cell evenly: there is a one-third chance of copying the terrain type above, a one-third chance of copying the terrain type beside it, and a one-third chance of selecting a random terrain type. The random terrain types have their own probability weights. Water has the highest weight, producing the archipelagic terrain.</p>
+
+          <div class="figure-pair code-figures">
+            <figure class="manual-figure">
+              <img src="img/terrain-weights.png" alt="A code excerpt showing above, left, and random terrain influences each given a weight of one." width="192" height="93" loading="lazy">
+              <figcaption>The three influence weights in the terrain generator.</figcaption>
+            </figure>
+            <figure class="manual-figure">
+              <img src="img/terrain-types.png" alt="A code excerpt showing weighted water, sand, grass, forest, and mountain terrain types and their character sets." width="518" height="547" loading="lazy">
+              <figcaption>Terrain types, character sets, and probability weights.</figcaption>
+            </figure>
+          </div>
+
+          <p>Once a terrain type is selected, the program chooses a character from the corresponding collection. Copying the cell above extends formations vertically. Copying the cell to the left extends them horizontally. Random selection introduces changes into those formations. The system holds only the previous line as memory.</p>
+
+          <p>The endless scroll also refers to present-day web scrolling and to new-media works such as Cory Arcangel's <cite>Super Mario Clouds</cite>. Arcangel's work uses a modified game cartridge that removes most of the elements of <cite>Super Mario Bros.</cite>, leaving a scrolling skyscape.<sup class="note-ref"><a id="ref-8" href="#note-8" aria-label="Note 8">8</a></sup> <cite>Insulae Incognita</cite> produces its scrolling landscape through a generative software process.</p>
+
+          <figure class="manual-figure figure-wide">
+            <img src="img/super-mario-clouds.jpg" alt="Cory Arcangel's Super Mario Clouds showing white pixel clouds moving across a blue CRT screen." width="1600" height="1226" loading="lazy">
+            <figcaption>Cory Arcangel, <cite>Super Mario Clouds</cite> (2002).</figcaption>
+          </figure>
+
+          <p>The algorithm generates a new field as it is rendered. I have given it a set of instructions—a digital score with rules, restrictions, and randomness—and the computer executes those instructions continuously. The terrain exists as an event in time. Older lines leave the screen as new lines are generated.</p>
+
+          <p class="source-link">The implementation can be inspected in the <a href="../lineGenerator.js">terrain generator</a>, <a href="../glyphData.js">glyph data</a>, and <a href="../translationModule.js">translation module</a>.</p>
+        </section>
+
+        <section id="performance">
+          <p class="section-number">05</p>
+          <h2>Code as Performance</h2>
+          <p>The “digital score” approach draws from aleatoric, or chance-based, composition. John Cage used chance operations to create musical events that were not fully determined by his own compositional choices. In <cite>Music of Changes</cite>, Cage used I Ching-derived operations to determine parameters including tempi, dynamics, sounds, silences, and durations.<sup class="note-ref"><a id="ref-9" href="#note-9" aria-label="Note 9">9</a></sup></p>
+
+          <figure class="manual-figure figure-wide">
+            <img src="img/music-of-changes.png" alt="A page from John Cage's Music of Changes showing dense experimental music notation." width="413" height="242" loading="lazy">
+            <figcaption>John Cage, <cite>Music of Changes</cite> (1951).</figcaption>
+          </figure>
+
+          <p>The use of randomness in <cite>Insulae Incognita</cite> serves a similar purpose. It also gives the computer a limited form of agency. The code's unpredictable element is a deliberate ceding of authorial control. I select the scripts, character sets, terrain types, weights, neighbor relationships, timing, and color behavior. The computer makes choices within those constraints, and I cannot predict the exact island it will produce.</p>
+
+          <p>The work also relates to computational, algorithmic, and aleatoric poetry by artists such as Jackson Mac Low, bpNichol, and Alison Knowles. Knowles and James Tenney's <cite>A House of Dust</cite> used a program to assemble quatrains from lists of materials, locations, light sources, and inhabitants.<sup class="note-ref"><a id="ref-10" href="#note-10" aria-label="Note 10">10</a></sup></p>
+
+          <figure class="manual-figure figure-narrow">
+            <img src="img/house-of-dust.jpg" alt="A printed copy of Alison Knowles and James Tenney's computer-generated poem A House of Dust." width="406" height="500" loading="lazy">
+            <figcaption>Alison Knowles with James Tenney, <cite>A House of Dust</cite> (1967).</figcaption>
+          </figure>
+
+          <p>Many computational poems use chance during composition and then present a static output. <cite>Insulae Incognita</cite> treats generativity as performance. Its code is an open system whose execution is the work. Each page load produces a new sequence. The computer does not generate a finished text in advance; it performs the text continuously.</p>
+        </section>
+
+        <section id="translation">
+          <p class="section-number">06</p>
+          <h2>Translation and Hybridization as Tectonics</h2>
+          <p>Within <cite>Insulae Incognita</cite>, occasional translations occur. A Hanzi character for “tree” may decompose into a Baybayin or Thai counterpart:</p>
+
+          <div class="translation-table" role="list" aria-label="Translation examples">
+            <div role="listitem"><span>木</span><b>tree</b><i>→</i><span>ᜉᜓᜈᜓ</span><b><i>puno</i></b></div>
+            <div role="listitem"><span>林</span><b>woods</b><i>→</i><span>ᜄᜓᜊᜆ᜔</span><b><i>gubat</i></b></div>
+            <div role="listitem"><span lang="ms-Arab" dir="rtl">ب</span><b><i>ba</i></b><i>+</i><span>サ</span><b><i>sa</i></b><i>→</i><span>ᜊᜐ</span><b><i>basa</i></b></div>
+          </div>
+
+          <p>These are still few, but the concept can expand over time. Translation and hybridization become geological acts within the poem's world. The sizes and types of terrain are reshaped by exchanges and mutations of meaning between scripts. This reflects historical processes of language diffusion, creolization, and cross-cultural communication. Contact transforms words and also changes the structures through which people understand place.</p>
+
+          <p>The combination of algorithmic translation and procedural generation creates a geography that is always changing. The world remains difficult to map for three reasons:</p>
+
+          <ol class="plain-steps">
+            <li><strong>infinity:</strong> it has no designed final line;</li>
+            <li><strong>disappearance:</strong> older lines are removed as they leave the screen; and</li>
+            <li><strong>mutation:</strong> translations unpredictably alter terrain that has already begun to form.</li>
+          </ol>
+
+          <p>Changes in color add temporality and weather. The audience sees a world being made and unmade. It can only be observed in parts and during the time of its generation.</p>
+        </section>
+
+        <section id="telephony">
+          <p class="section-number">07</p>
+          <h2>Between Telephony and Computation</h2>
+          <p><cite>Insulae Incognita</cite> was placed in the First United Building Museum between old rotary telephones and mechanical adding machines. This put the piece in dialogue with two histories: telecommunications and computation.</p>
+
+          <figure class="manual-figure figure-narrow">
+            <img src="img/installation-view.jpg" alt="Insulae Incognita installed on a small monitor among telephones and other artifacts in the First United Building Museum." width="768" height="1024" loading="lazy">
+            <figcaption>Installation view, First United Building Museum, Escolta.</figcaption>
+          </figure>
+
+          <p>The artwork is fundamentally web-based and was adapted for an installation setting. The internet developed through the convergence of computer processing and communication networks.<sup class="note-ref"><a id="ref-11" href="#note-11" aria-label="Note 11">11</a></sup> The work uses a communication network to transmit a live calculation.</p>
+
+          <p>There is a contrast between the physical forms. The older machines are heavy, mechanical, and dedicated to a single task. A thin screen and single-board computer can now perform several of those functions. At the same time, the visual output echoes the older machines. The scrolling column of text resembles a telegraph feed, stock ticker, or ledger of sums from an adding machine.</p>
+
+          <p>In the Philippines, telephones and adding machines were imported technologies that often arrived after adoption elsewhere. Their presence indicated forms of connection between the archipelago and the rest of the world, though that connection was slow, uneven, and mediated through foreign design.</p>
+
+          <p>A browser tab now transmits and computes at once. In <cite>Insulae Incognita</cite>, Baybayin is rendered beside Hanzi, Jawi, Kana, and Devanagari on that same surface. Modern typefaces and Unicode allow these scripts to appear where computation and communication happen.</p>
+
+          <p>The juxtaposition creates an anachronism. The artwork is technologically newer than the artifacts beside it, yet it attempts to resurface and reimagine a past older than those artifacts. It uses generative code, web technologies, and open-source hardware to speculate further backward and to respond to the machines as one of their descendants.</p>
+        </section>
+
+        <section id="limits">
+          <p class="section-number">08</p>
+          <h2>Limits of the Digital</h2>
+          <p>The work is shaped by the limits of digital systems. Only scripts with modern Unicode encodings and usable font support can appear. Unicode encodes characters by script; it does not encode languages, oral forms, or the full cultural use of a writing system.<sup class="note-ref"><a id="ref-12" href="#note-12" aria-label="Note 12">12</a></sup></p>
+
+          <p>This leaves out many written forms and oral languagings that once flourished in Manila and across the region. The scripts shown are contemporary descendants shaped by the demands of inscription, print, scholarship, standardization, type design, and code. Their presence in a browser does not reproduce their historical use.</p>
+
+          <p>These limitations are part of the work. The same changes that standardized the scripts, combined with the cultural memory of ASCII art, make it possible to imagine script as terrain. Within these bounds, the piece uses what can be rendered today to gesture toward what has been submerged. The past it imagines remains partial and obscured.</p>
+
+          <aside class="critical-note limit-note">
+            <p class="aside-label">Position</p>
+            <p>The work is a situated speculation by a Filipino and Japanese artist. Its translational pairings are poetic propositions rather than exhaustive linguistic claims. Future development should include language knowledge, collaboration, and correction.</p>
+          </aside>
+        </section>
+
+        <section id="installation" class="apparatus">
+          <p class="section-number">09</p>
+          <h2>Installation and Operation</h2>
+          <p>The installation version uses a monitor and Orange Pi to run the browser work as a dedicated display. The components are:</p>
+
+          <div class="apparatus-grid">
+            <div>
+              <p class="aside-label">Display and computer</p>
+              <ul>
+                <li>one 37 × 36 × 18 cm monitor</li>
+                <li>one Orange Pi</li>
+                <li>one HDMI-to-VGA cable</li>
+                <li>one keyboard</li>
+              </ul>
+            </div>
+            <div>
+              <p class="aside-label">Power</p>
+              <ul>
+                <li>one Orange Pi power connector</li>
+                <li>one monitor power cable</li>
+                <li>one power hub with USB and three-prong plugs</li>
+                <li>one 10 × 11 × 18 cm AVR</li>
+              </ul>
+            </div>
+          </div>
+
+          <p>The installation can be placed wherever power, ventilation, and protection from moisture can be maintained. The Orange Pi connects to the monitor through its HDMI port and the monitor's VGA port. The Orange Pi and monitor connect to the power hub, which connects to the AVR.</p>
+
+          <details open>
+            <summary>Handling and operation</summary>
+            <div class="details-body">
+              <p>All components must be kept dry. The Orange Pi can be handled while kept in its paper covering, but its circuitry should not be touched because of the risk of short circuiting. Handle the board by its edges or with antistatic gloves.</p>
+              <p><strong>Turning on:</strong> switch on the AVR and the monitor. The system should start on its own. It briefly displays the Armbian system before opening the artwork.</p>
+              <p><strong>Turning off:</strong> with the keyboard, press <kbd>Alt</kbd> + <kbd>F4</kbd> twice: once to exit the generative work and once to exit the system. A menu appears with reboot and shutdown options. Use the arrow keys to select shutdown. After the computer has shut down, switch off the AVR.</p>
+            </div>
+          </details>
+        </section>
+
+        <section id="artist" class="artist-section">
+          <p class="section-number">10</p>
+          <h2>About the Artist</h2>
+          <div class="artist-grid">
+            <img src="img/xyh-tamura.jpg" alt="Portrait of xyh tamura." width="215" height="211" loading="lazy">
+            <div>
+              <p>xyh tamura does transdisciplinary art and research colliding music, writing, visuals, science, technology, and performance. Their work includes experimental songwriting, electronic literature, videopoetry, conceptual art, and participatory methods.</p>
+              <p>Through their projects, xyh explores intermedia poetics, posthumanities, and the intersections of science, technology, culture, and globalization, often approached from an intersectional Filipino (Ilonggo) and Japanese perspective. xyh also composes scores for film and does research in philosophy and social development.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="notes" class="notes-section">
+          <p class="section-number">N</p>
+          <h2>Notes</h2>
+          <ol class="notes-list">
+            <li id="note-1">William Henry Scott, <cite>Barangay: Sixteenth-Century Philippine Culture and Society</cite> (Quezon City: Ateneo de Manila University Press, 1994); Laura Lee Junker, <cite>Raiding, Trading, and Feasting: The Political Economy of Philippine Chiefdoms</cite> (Honolulu: University of Hawai‘i Press, 1999), <a href="https://doi.org/10.1515/9780824864064">https://doi.org/10.1515/9780824864064</a>. <a class="backlink" href="#ref-1" aria-label="Back to reference 1">↩</a></li>
+            <li id="note-2">Unicode Consortium, “Philippine Scripts: Tagalog, Hanunóo, Buhid, and Tagbanwa,” in <cite>The Unicode Standard</cite>, version 17.0, chap. 17, accessed July 14, 2026, <a href="https://www.unicode.org/versions/Unicode17.0.0/core-spec/chapter-17/">https://www.unicode.org/versions/Unicode17.0.0/core-spec/chapter-17/</a>. <a class="backlink" href="#ref-2" aria-label="Back to reference 2">↩</a></li>
+            <li id="note-3">Nathan Timothy Chan, “I, began, to, Die, and, I, began, to, Grow: Incarnational Theopoetics in the Poetry of José Garcia Villa,” <cite>Perspectives in the Arts and Humanities Asia</cite> 13, no. 2 (2023), <a href="https://archium.ateneo.edu/paha/vol13/iss2/2/">https://archium.ateneo.edu/paha/vol13/iss2/2/</a>. <a class="backlink" href="#ref-3" aria-label="Back to reference 3">↩</a></li>
+            <li id="note-4">Noto Fonts, “Use Noto,” accessed July 14, 2026, <a href="https://notofonts.github.io/noto-docs/website/use/">https://notofonts.github.io/noto-docs/website/use/</a>. <a class="backlink" href="#ref-4" aria-label="Back to reference 4">↩</a></li>
+            <li id="note-5">Australian Museum, “Terra Nullius,” <cite>Unsettled</cite>, accessed July 14, 2026, <a href="https://australian.museum/learn/first-nations/unsettled/recognising-invasions/terra-nullius/">https://australian.museum/learn/first-nations/unsettled/recognising-invasions/terra-nullius/</a>. <a class="backlink" href="#ref-5" aria-label="Back to reference 5">↩</a></li>
+            <li id="note-6">Souvik Mukherjee, <cite>Videogames and Postcolonialism: Empire Plays Back</cite> (Cham: Palgrave Macmillan, 2017), <a href="https://doi.org/10.1007/978-3-319-54822-7">https://doi.org/10.1007/978-3-319-54822-7</a>. <a class="backlink" href="#ref-6" aria-label="Back to reference 6">↩</a></li>
+            <li id="note-7">Ken Perlin, “Improving Noise,” in <cite>Proceedings of the 29th Annual Conference on Computer Graphics and Interactive Techniques</cite> (New York: ACM, 2002), 681–82, <a href="https://doi.org/10.1145/566570.566636">https://doi.org/10.1145/566570.566636</a>. <a class="backlink" href="#ref-7" aria-label="Back to reference 7">↩</a></li>
+            <li id="note-8">Cory Arcangel, <cite>Super Mario Clouds</cite>, 2002, modified Nintendo cartridge and video installation, artist website, <a href="https://coryarcangel.com/works/2002-001-super-mario-clouds.html">https://coryarcangel.com/works/2002-001-super-mario-clouds.html</a>. <a class="backlink" href="#ref-8" aria-label="Back to reference 8">↩</a></li>
+            <li id="note-9">John Cage Trust, “Music of Changes,” <cite>John Cage Complete Works</cite>, accessed July 14, 2026, <a href="https://www.data-johncage.org/pp/John-Cage-Work-Detail.cfm?work_ID=134">https://www.data-johncage.org/pp/John-Cage-Work-Detail.cfm?work_ID=134</a>. <a class="backlink" href="#ref-9" aria-label="Back to reference 9">↩</a></li>
+            <li id="note-10">Alison Knowles with James Tenney, <cite>A House of Dust</cite>, 1967, computer-generated poetry, Ragnar Digital collection, <a href="https://www.ragnardigital.art/collection/a-house-of-dust">https://www.ragnardigital.art/collection/a-house-of-dust</a>. <a class="backlink" href="#ref-10" aria-label="Back to reference 10">↩</a></li>
+            <li id="note-11">Barry M. Leiner et al., “A Brief History of the Internet,” Internet Society, 1997, <a href="https://www.internetsociety.org/internet/history-internet/brief-history-internet/">https://www.internetsociety.org/internet/history-internet/brief-history-internet/</a>. <a class="backlink" href="#ref-11" aria-label="Back to reference 11">↩</a></li>
+            <li id="note-12">Unicode Consortium, “Basic Questions,” <cite>Unicode Frequently Asked Questions</cite>, accessed July 14, 2026, <a href="https://www.unicode.org/faq/basic_q.html">https://www.unicode.org/faq/basic_q.html</a>. <a class="backlink" href="#ref-12" aria-label="Back to reference 12">↩</a></li>
+          </ol>
+        </section>
+
+        <section id="bibliography" class="bibliography">
+          <p class="section-number">B</p>
+          <h2>Bibliography</h2>
+          <div class="bib-list">
+            <p>Arcangel, Cory. <cite>Super Mario Clouds</cite>. 2002. Modified Nintendo cartridge and video installation. Artist website. <a href="https://coryarcangel.com/works/2002-001-super-mario-clouds.html">https://coryarcangel.com/works/2002-001-super-mario-clouds.html</a>.</p>
+            <p>Australian Museum. “Terra Nullius.” <cite>Unsettled</cite>. Accessed July 14, 2026. <a href="https://australian.museum/learn/first-nations/unsettled/recognising-invasions/terra-nullius/">https://australian.museum/learn/first-nations/unsettled/recognising-invasions/terra-nullius/</a>.</p>
+            <p>Bay 12 Games. <cite>Dwarf Fortress</cite>. Computer game. 2006.</p>
+            <p>Cage, John. <cite>Music of Changes</cite>. 1951. Solo piano. John Cage Complete Works. <a href="https://www.data-johncage.org/pp/John-Cage-Work-Detail.cfm?work_ID=134">https://www.data-johncage.org/pp/John-Cage-Work-Detail.cfm?work_ID=134</a>.</p>
+            <p>Chan, Nathan Timothy. “I, began, to, Die, and, I, began, to, Grow: Incarnational Theopoetics in the Poetry of José Garcia Villa.” <cite>Perspectives in the Arts and Humanities Asia</cite> 13, no. 2 (2023). <a href="https://archium.ateneo.edu/paha/vol13/iss2/2/">https://archium.ateneo.edu/paha/vol13/iss2/2/</a>.</p>
+            <p>Junker, Laura Lee. <cite>Raiding, Trading, and Feasting: The Political Economy of Philippine Chiefdoms</cite>. Honolulu: University of Hawai‘i Press, 1999. <a href="https://doi.org/10.1515/9780824864064">https://doi.org/10.1515/9780824864064</a>.</p>
+            <p>Knowles, Alison, with James Tenney. <cite>A House of Dust</cite>. 1967. Computer-generated poetry. Ragnar Digital collection. <a href="https://www.ragnardigital.art/collection/a-house-of-dust">https://www.ragnardigital.art/collection/a-house-of-dust</a>.</p>
+            <p>Leiner, Barry M., Vinton G. Cerf, David D. Clark, Robert E. Kahn, Leonard Kleinrock, Daniel C. Lynch, Jon Postel, Larry G. Roberts, and Stephen Wolff. “A Brief History of the Internet.” Internet Society, 1997. <a href="https://www.internetsociety.org/internet/history-internet/brief-history-internet/">https://www.internetsociety.org/internet/history-internet/brief-history-internet/</a>.</p>
+            <p>MicroProse. <cite>Sid Meier's Civilization II</cite>. Computer game. 1996.</p>
+            <p>Mojang Studios. <cite>Minecraft</cite>. Computer game. 2009.</p>
+            <p>Mukherjee, Souvik. <cite>Videogames and Postcolonialism: Empire Plays Back</cite>. Cham: Palgrave Macmillan, 2017. <a href="https://doi.org/10.1007/978-3-319-54822-7">https://doi.org/10.1007/978-3-319-54822-7</a>.</p>
+            <p>Noto Fonts. “Use Noto.” Accessed July 14, 2026. <a href="https://notofonts.github.io/noto-docs/website/use/">https://notofonts.github.io/noto-docs/website/use/</a>.</p>
+            <p>Perlin, Ken. “Improving Noise.” In <cite>Proceedings of the 29th Annual Conference on Computer Graphics and Interactive Techniques</cite>, 681–82. New York: ACM, 2002. <a href="https://doi.org/10.1145/566570.566636">https://doi.org/10.1145/566570.566636</a>.</p>
+            <p>Scott, William Henry. <cite>Barangay: Sixteenth-Century Philippine Culture and Society</cite>. Quezon City: Ateneo de Manila University Press, 1994.</p>
+            <p>Tamura, xyh. <cite>Insulae Incognita: Expanded Art Manual</cite>. Artist manual, 2026.</p>
+            <p>Toy, Michael, Glenn Wichman, and Ken Arnold. <cite>Rogue</cite>. Computer game. 1980.</p>
+            <p>Unicode Consortium. “Basic Questions.” <cite>Unicode Frequently Asked Questions</cite>. Accessed July 14, 2026. <a href="https://www.unicode.org/faq/basic_q.html">https://www.unicode.org/faq/basic_q.html</a>.</p>
+            <p>———. “Philippine Scripts: Tagalog, Hanunóo, Buhid, and Tagbanwa.” In <cite>The Unicode Standard</cite>, version 17.0, chap. 17. Mountain View, CA: Unicode Consortium, 2025. <a href="https://www.unicode.org/versions/Unicode17.0.0/core-spec/chapter-17/">https://www.unicode.org/versions/Unicode17.0.0/core-spec/chapter-17/</a>.</p>
+          </div>
+        </section>
+
+        <section class="cite-this" aria-labelledby="cite-this-heading">
+          <p class="aside-label" id="cite-this-heading">Suggested citation</p>
+          <p>Tamura, xyh. “Insulae Incognita: Art Manual and Research-Creation Exegesis.” 2026. <a href="https://xyhtamura.github.io/insulaeincognita/about/">https://xyhtamura.github.io/insulaeincognita/about/</a>.</p>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <p><span>ᜏ</span> <cite>Insulae Incognita</cite> · xyh tamura · 2026</p>
+    <a href="#page-title">Top ↑</a>
+  </footer>
+
+  <script src="page.js"></script>
+</body>
+</html>
